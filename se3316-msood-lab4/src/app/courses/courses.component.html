@@ -1,10 +1,16 @@
 <h2>Western Univeristy Courses </h2>
 
-<div *ngFor="let course of courses">
+<div *ngIf="selectedCourse" class="selectedDiv">
+    <h2 id="selectedHeading">{{selectedCourse.subject}} {{selectedCourse.catalog_nbr}} - {{selectedCourse.className}}</h2>
+    <p><b>Description:</b>{{selectedCourse.catalog_description}}</p>
+</div>
+
+
+<div *ngFor="let course of courses" (click)="onSelect(course)" class="courses">
     <h3>{{course.subject}} {{course.catalog_nbr}} - {{course.className}}</h3>
     <p><b>Description:</b>{{course.catalog_description}}</p>
 
-    <table>
+    <table [class.selected]="course === selectedCourse" >
         <thead >
             <tr >
                 <th>Section</th>

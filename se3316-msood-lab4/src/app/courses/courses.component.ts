@@ -1,6 +1,6 @@
+import { Courses } from './../Courses';
 import { COURSES } from './../all-Courses';
 import { Component, OnInit } from '@angular/core';
-import {Courses} from '../Courses';
 
 @Component({
   selector: 'app-courses',
@@ -10,10 +10,16 @@ import {Courses} from '../Courses';
 export class CoursesComponent implements OnInit {
 
   courses = COURSES;
+  selectedCourse: Courses;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(course:Courses){
+    this.selectedCourse=course;
+    console.log(this.selectedCourse);
   }
 
 }

@@ -34,3 +34,28 @@ td {
     vertical-align: top;
     border-top: 1px solid #dddddd;
 }
+
+.courses table:hover {
+    color: #0da2ec;
+    background-color: rgb(199, 0, 0);
+    left: .1em;
+  }
+  .courses table.selected {
+    background-color: #000000;
+    color: rgb(170, 0, 0);
+  }
+  .coursess table.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+  }
+
+  .selectedDiv{
+      background-color: #9058eb;
+      padding-left: 10px;
+      margin: 10px;
+  }
+
+  #selectedHeading{
+      text-decoration: underline;
+      color: #f7fa64;
+  }
