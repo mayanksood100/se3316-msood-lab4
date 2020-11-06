@@ -1,3 +1,4 @@
+import { CourseComponentFilterPipe } from './courses/courseComponent-filter.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +15,8 @@ import { CourseNumberFilterPipe } from './courses/courseNumber-filter.pipe';
     CoursesComponent,
     DashboardComponent,
     SubjectFilterPipe,
-    CourseNumberFilterPipe
+    CourseNumberFilterPipe,
+    CourseComponentFilterPipe
   ],
   imports: [
     BrowserModule,

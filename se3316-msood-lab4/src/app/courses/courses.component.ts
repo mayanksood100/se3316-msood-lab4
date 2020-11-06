@@ -14,6 +14,7 @@ export class CoursesComponent implements OnInit {
   selectedCourse: Courses;
   subject: string;
   courseNumber:string;
+  courseComponent: string;
 
   constructor(private courseService: CoursesService) { }
 
