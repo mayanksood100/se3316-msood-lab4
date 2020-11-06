@@ -1,12 +1,15 @@
 <h2>Western Univeristy Courses </h2>
 
+<input type="text" id="subjectSearch" [(ngModel)]="subject" placeholder="Search By Subject">
+<input type="text" id="courseNumberSearch" [(ngModel)]="courseNumber" placeholder="Search By CourseNumber">
+
 <div *ngIf="selectedCourse" class="selectedDiv">
     <h2 id="selectedHeading">{{selectedCourse.subject}} {{selectedCourse.catalog_nbr}} - {{selectedCourse.className}}</h2>
     <p><b>Description:</b>{{selectedCourse.catalog_description}}</p>
 </div>
 
 
-<div *ngFor="let course of courses" (click)="onSelect(course)" class="courses">
+<div *ngFor="let course of courses | subjectFilter:subject | courseNumberFilter:courseNumber" (click)="onSelect(course)" class="courses">
     <h3>{{course.subject}} {{course.catalog_nbr}} - {{course.className}}</h3>
     <p><b>Description:</b>{{course.catalog_description}}</p>
 

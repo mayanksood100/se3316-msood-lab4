@@ -12,6 +12,8 @@ export class CoursesComponent implements OnInit {
 
   courses = COURSES;
   selectedCourse: Courses;
+  subject: string;
+  courseNumber:string;
 
   constructor(private courseService: CoursesService) { }
 
@@ -27,5 +29,6 @@ export class CoursesComponent implements OnInit {
     this.selectedCourse=course;
     console.log(this.selectedCourse);
   }
+
 
 }
