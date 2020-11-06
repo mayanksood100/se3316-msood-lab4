@@ -1,0 +1,9 @@
+<h2>My Schedules</h2>
+<ul class="schedules">
+  <li *ngFor="let schedule of schedules">
+    <a routerLink="/schedule-detail/{{schedule.name}}"> 
+    <span class="badge">{{schedule.name}}</span> {{schedule.schedule_courses[0].subject}} {{schedule.schedule_courses[0].courseCode}}
+    </a>  
+  </li>
+</ul>
+

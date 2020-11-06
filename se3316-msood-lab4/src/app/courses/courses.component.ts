@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  courses = COURSES;
+  courses: Courses[];
   selectedCourse: Courses;
   subject: string;
   courseNumber:string;
