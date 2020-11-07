@@ -1,8 +1,6 @@
 import { SchedulesService } from './../schedules.service';
-import { Schedules } from './../Schedules';
-import { SCHEDULES } from './../all-Schedules';
 import { Component, OnInit } from '@angular/core';
-
+import { Schedule } from '../schedule';
 
 @Component({
   selector: 'app-schedules',
@@ -10,21 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedules.component.css']
 })
 export class SchedulesComponent implements OnInit {
-schedules: Schedules[];
-selectedSchedule: Schedules;
+  schedules:Schedule[] = [];
 
   constructor(private scheduleService: SchedulesService) { }
 
   ngOnInit(): void {
-    this.getSchedules();
+    this.getAllSchedules();
   }
 
-  getSchedules(): void {
-    this.scheduleService.getSchedules().subscribe(schedules => this.schedules = schedules);
+  getAllSchedules(){
+    this.scheduleService.getAllSchedules().subscribe(scheds => {
+      this.schedules = scheds;
+      console.log(scheds);
+      console.log(this.schedules);
+    });
   }
 
-  onSelect(schedule: Schedules) {
-    this.selectedSchedule = schedule;
+  deleteSchedule(name:string): void {
+    console.log(name);
+    this.scheduleService.deleteSchedule(name).subscribe(data => {
+    this.getAllSchedules();
+    });
+
   }
+
+  deleteAll(): void {
+   this.scheduleService.deleteAllSchedules().subscribe(data=>this.getAllSchedules());
+  }
+  
+
 
 }

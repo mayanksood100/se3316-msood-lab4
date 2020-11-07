@@ -1,25 +1,26 @@
+import { Schedule } from './schedule';
+import { environment } from './../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import{Schedules} from './Schedules'
-import { SCHEDULES } from './all-Schedules';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class SchedulesService {
-  
-  constructor() { }
+  private SERVER_URL = environment.SERVER_URL;
+  constructor(private http: HttpClient) { }
 
+  getAllSchedules(){
+    return this.http.get<Schedule[]>(this.SERVER_URL + '/schedule');
+  }
 
-    getSchedules(): Observable<Schedules[]>{
-      return of(SCHEDULES);
-    }
+  deleteSchedule(name:string){
+    const url = `${this.SERVER_URL}/schedule/${name}`
+    return this.http.delete<Schedule>(url);
+  }
 
-    getSchedule(name: string): Observable<Schedules> {
-      return of(SCHEDULES.find(schedule => schedule.name === name));
-    }
+  deleteAllSchedules(){
+    return this.http.delete<Schedule[]>(this.SERVER_URL + '/schedule');
+  }
 
 }

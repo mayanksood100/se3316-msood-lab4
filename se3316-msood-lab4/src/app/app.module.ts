@@ -9,10 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubjectFilterPipe } from './courses/subject-filter.pipe';
 import { CourseNumberFilterPipe } from './courses/courseNumber-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { SchedulesComponent } from './schedules/schedules.component';
-import { ScheduleDetailComponent } from './schedule-detail/schedule-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -23,17 +21,13 @@ import { ScheduleDetailComponent } from './schedule-detail/schedule-detail.compo
     CourseNumberFilterPipe,
     CourseComponentFilterPipe,
     SchedulesComponent,
-    ScheduleDetailComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation: false }
-    )
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
