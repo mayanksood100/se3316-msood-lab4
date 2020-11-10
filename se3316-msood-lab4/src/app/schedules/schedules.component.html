@@ -5,16 +5,20 @@
         <span class="badge">{{schedule.scheduleName}} - {{schedule.subject_schedule.length}} Course(s)</span> 
       </a>
     {{schedule.subject_schedule}}
-    <button class="delete" title="Delete Schedule"
-    (click)="deleteSchedule(schedule.scheduleName)">x</button>
+
+    <div id="deleteButtonDiv">
+      <button class="delete" title="Delete Schedule"
+      (click)="deleteSchedule(schedule.scheduleName)">x</button>
+    </div>
+   
   </li>
   <br><br>
   <button id="deleteAll" (click)="deleteAll()">Delete All Schedules</button>
 
 </ul>
 
-<div>
-  <h2>Add New Schedule (Retry)</h2>
+<div id="addScheduleForm">
+  <h2 id="addTitle">Add New Schedule</h2>
   <form [formGroup]="scheduleForm" (ngSubmit)="submitSchedule()">
 
     <label for="scheduleName">Enter Schedule Name</label>
@@ -29,9 +33,7 @@
       </div>
     </div>
     
-    <button type="button" (click)="addAnotherCourse()">Add Another Course</button>
-
-    <button type="submit">Submit Schedule</button>
-    <br><br>
+    <button type="button" (click)="addAnotherCourse()" id="addAnotherCourse">Add Another Course</button><br><br>
+    <button type="submit" id="submitSchedule">Submit Schedule</button><br><br>
   </form>
 </div>
