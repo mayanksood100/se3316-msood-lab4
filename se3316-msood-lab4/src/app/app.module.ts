@@ -10,7 +10,8 @@ import { SubjectFilterPipe } from './courses/subject-filter.pipe';
 import { CourseNumberFilterPipe } from './courses/courseNumber-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SchedulesComponent } from './schedules/schedules.component';
-
+import { ScheduleDetailComponent } from './schedule-detail/schedule-detail.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { SchedulesComponent } from './schedules/schedules.component';
     CourseNumberFilterPipe,
     CourseComponentFilterPipe,
     SchedulesComponent,
+    ScheduleDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
    
   ],
   providers: [],

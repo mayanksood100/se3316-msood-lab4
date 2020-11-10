@@ -14,11 +14,11 @@
 </div>
 
 
-<div *ngFor="let course of courses | subjectFilter:subject | courseNumberFilter:courseNumber | courseComponentFilter: courseComponent" (click)="onSelect(course)" class="courses">
+<div *ngFor="let course of courses | subjectFilter:subject | courseNumberFilter:courseNumber | courseComponentFilter: courseComponent"  (click)="onSelect(course)" class="courses">
     <h3>{{course.subject}} {{course.catalog_nbr}} - {{course.className}}</h3>
     <p><b>Description:</b>{{course.catalog_description}}</p>
 
-    <table [class.selected]="course === selectedCourse" >
+    <table [class.selected]="course === selectedCourse" id="coursesTable" >
         <thead >
             <tr >
                 <th>Section</th>

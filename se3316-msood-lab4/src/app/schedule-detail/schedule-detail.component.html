@@ -1,0 +1,12 @@
+<div *ngIf="schedule">
+    <h2>Schedule: "{{schedule.scheduleName | uppercase}}" Details</h2>
+    <div><span>Courses: </span>{{schedule.subject_schedule}}</div>
+    <br>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="schedule.scheduleName" placeholder="name"/>
+      </label>
+    </div>
+    <br>
+    <button (click)="goBack()">Back</button>
+  </div>
