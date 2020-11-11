@@ -1,0 +1,20 @@
+<div id="addScheduleForm">
+    <h2 id="addTitle">Add New Schedule</h2>
+    <form [formGroup]="scheduleForm" (ngSubmit)="submitSchedule()">
+  
+      <label for="scheduleName">Enter Schedule Name</label>
+      <input type="text" formControlName="scheduleName" placeholder="Schedule Name" required><br><br>
+  
+      <div formArrayName="subject_schedule" *ngFor="let course of scheduleForm.get('subject_schedule')['controls']; let i = index;">
+        <div [formGroupName]="i">
+        <label for="{{'subject'+ i}}">{{'Enter Subject ' + (i+1) }}</label>
+        <input type="text" formControlName="subject" placeholder="Enter Subject" id="{{'subject' + i}}" ><br><br>
+        <label for="{{'courseNumber'+ i}}">{{'Enter Course Code ' + (i+1)}}</label>
+        <input type="text" formControlName="courseCode" placeholder="Enter Course Code" id="{{'courseNumber' + i}}"><br><br>
+        </div>
+      </div>
+      
+      <button type="button" (click)="addAnotherCourse()" id="addAnotherCourse">Add Another Course</button><br><br>
+      <button type="submit" id="submitSchedule">Submit Schedule</button><br><br>
+    </form>
+  </div>

@@ -1,0 +1,72 @@
+.editBadge{
+    font-size: large;
+    color: white;
+    float: right;
+    padding-right: 15px;
+  }
+
+  #editButton{
+    background-color: #f79220;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .delete{
+    background-color:#c92222;
+    color: white;
+  }
+
+  #deleteButtonDiv{
+    float: right;
+  }
+
+#deleteAll{
+    background-color: red;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+#addScheduleForm{
+  background-color: #f2f2f2;
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+#addTitle{
+  text-align: center;
+}
+
+label{
+  padding-left: 10px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#submitSchedule, #addAnotherCourse{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#addAnotherCourse{
+  background-color: rgb(123, 212, 241);
+}

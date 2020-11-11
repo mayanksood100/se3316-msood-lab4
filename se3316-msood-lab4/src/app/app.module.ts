@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { ScheduleDetailComponent } from './schedule-detail/schedule-detail.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CreateSchedulesComponent } from './create-schedules/create-schedules.component';
+import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     CourseComponentFilterPipe,
     SchedulesComponent,
     ScheduleDetailComponent,
+    CreateSchedulesComponent,
+    EditScheduleComponent,
   ],
   imports: [
     BrowserModule,

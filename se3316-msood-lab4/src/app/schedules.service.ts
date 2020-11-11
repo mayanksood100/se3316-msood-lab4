@@ -27,6 +27,15 @@ export class SchedulesService {
     return this.http.post<Schedule[]>(this.SERVER_URL + '/schedule', createBody);
   }
 
+  editSchedule(name:string, updatedBody){
+    const url = `${this.SERVER_URL}/schedule/${name}`;
+
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('content-type', 'application/json');
+
+    return this.http.put<Schedule[]>(url, updatedBody);
+  }
+
   deleteSchedule(name:string){
     const url = `${this.SERVER_URL}/schedule/${name}`
     return this.http.delete<Schedule>(url);
