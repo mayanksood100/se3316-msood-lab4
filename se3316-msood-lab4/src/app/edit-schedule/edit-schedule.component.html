@@ -3,14 +3,14 @@
     <form [formGroup]="scheduleForm" (ngSubmit)="submitEditedSchedule()">
   
       <label for="scheduleName">Enter Schedule Name</label>
-      <input type="text" formControlName="scheduleName" placeholder="Schedule Name" required><br><br>
+      <input type="text" formControlName="scheduleName" placeholder="Schedule Name" required onkeydown="return /\p{L}/u.test(event.key)"><br><br>
   
       <div formArrayName="subject_schedule" *ngFor="let course of scheduleForm.get('subject_schedule')['controls']; let i = index;">
         <div [formGroupName]="i">
         <label for="{{'subject'+ i}}">{{'Enter Subject ' + (i+1) }}</label>
-        <input type="text" formControlName="subject" placeholder="Enter Subject" id="{{'subject' + i}}" ><br><br>
+        <input type="text" formControlName="subject" placeholder="Enter Subject" id="{{'subject' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)" ><br><br>
         <label for="{{'courseNumber'+ i}}">{{'Enter Course Code ' + (i+1)}}</label>
-        <input type="text" formControlName="courseCode" placeholder="Enter Course Code" id="{{'courseNumber' + i}}"><br><br>
+        <input type="text" formControlName="courseCode" placeholder="Enter Course Code" id="{{'courseNumber' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)"><br><br>
         </div>
       </div>
       

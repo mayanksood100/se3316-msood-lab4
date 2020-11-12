@@ -16,5 +16,4 @@ export class CoursesService {
     return this.http.get<Courses[]>(this.SERVER_URL + '/courses');
   }
   
-
 }

@@ -2,6 +2,7 @@ import { CoursesService } from './../courses.service';
 import { Courses } from './../Courses';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -32,5 +33,14 @@ export class CoursesComponent implements OnInit {
     console.log(this.selectedCourse);
   }
 
+  colorComponent(ssrComponent){
+    switch (ssrComponent) {
+      case 'TUT':
+        return 'red';
+      case 'LAB':
+        return 'blue';
+      
+    }
+  }
 
 }

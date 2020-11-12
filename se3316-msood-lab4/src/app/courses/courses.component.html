@@ -14,7 +14,7 @@
 </div>
 
 
-<div *ngFor="let course of courses | subjectFilter:subject | courseNumberFilter:courseNumber | courseComponentFilter: courseComponent"  (click)="onSelect(course)" class="courses">
+<div *ngFor="let course of courses | subjectFilter:subject | courseNumberFilter:courseNumber | courseComponentFilter: courseComponent"  (click)="onSelect(course)" class="courses" [ngStyle]="{'color':colorComponent(course.course_info[0].ssr_component)}">
     <h3>{{course.subject}} {{course.catalog_nbr}} - {{course.className}}</h3>
     <p><b>Description:</b>{{course.catalog_description}}</p>
 
