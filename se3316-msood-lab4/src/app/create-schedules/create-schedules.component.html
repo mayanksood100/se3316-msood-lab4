@@ -4,14 +4,17 @@
   
       <label for="scheduleName">Enter Schedule Name</label>
       <input type="text" formControlName="scheduleName" placeholder="Schedule Name" required 
-      onkeydown="return /\p{L}/u.test(event.key)"><br><br>
+      onkeydown="return /\p{L}/u.test(event.key)" id="scheduleNameInput"><br><br>
   
       <div formArrayName="subject_schedule" *ngFor="let course of scheduleForm.get('subject_schedule')['controls']; let i = index;">
         <div [formGroupName]="i">
         <label for="{{'subject'+ i}}">{{'Enter Subject ' + (i+1) }}</label>
-        <input type="text" formControlName="subject" placeholder="Enter Subject" id="{{'subject' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)" ><br><br>
+        <input type="text" formControlName="subject" placeholder="Enter Subject" id="{{'subject' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)" class="subjectInputs"><br><br>
+        <div>
+          <button title="Delete Course" id="deleteCourseButton" *ngIf="scheduleForm.get('subject_schedule').length>1" (click)="removeCourseButtonClick(i)">x</button>
+        </div>
         <label for="{{'courseNumber'+ i}}">{{'Enter Course Code ' + (i+1)}}</label>
-        <input type="text" formControlName="courseCode" placeholder="Enter Course Code" id="{{'courseNumber' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)"><br><br>
+        <input type="text" formControlName="courseCode" placeholder="Enter Course Code" id="{{'courseNumber' + i}}" onkeydown="return /[\p{L}\p{N}]/u.test(event.key)" class="courseNumberInputs"><br><br>
         </div>
       </div>
       

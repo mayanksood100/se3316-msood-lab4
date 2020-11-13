@@ -46,4 +46,8 @@ export class CreateSchedulesComponent implements OnInit {
     this.scheduleForm.reset();
   }
 
+  removeCourseButtonClick(courseIndex:number): void{
+    (<FormArray>this.scheduleForm.get('subject_schedule')).removeAt(courseIndex);
+  }
+
 }

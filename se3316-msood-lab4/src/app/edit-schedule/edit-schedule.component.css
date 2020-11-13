@@ -48,13 +48,24 @@ label{
 }
 
 input[type=text] {
-  width: 100%;
+  width: 65%;
   padding: 12px 20px;
-  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+#scheduleNameInput{
+  margin-left: 15px;
+}
+
+.subjectInputs{
+  margin-left: 55px;
+}
+
+.courseNumberInputs{
+  margin-left: 20px;
 }
 
 #submitEditedSchedule, #addAnotherCourse{
@@ -69,4 +80,15 @@ input[type=text] {
 
 #addAnotherCourse{
   background-color: rgb(123, 212, 241);
+}
+
+#deleteCourseButton{
+  background-color: #c92222;
+  color: white;
+  border: 1px solid black;
+  border-radius: 15%;
+  width: 40px;
+  height: 25px;
+  font-size: larger;
+  margin-left: 900px;
 }
